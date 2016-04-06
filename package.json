@@ -1,0 +1,30 @@
+{
+  "name": "morphdom-hooks",
+  "version": "0.0.1",
+  "description": "Lifecycle hooks for morphdom",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callum/morphdom-hooks.git"
+  },
+  "keywords": [
+    "hook",
+    "lifecycle",
+    "morphdom"
+  ],
+  "author": "Callum Jefferies <callum@callumj.uk> (http://callumj.uk/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callum/morphdom-hooks/issues"
+  },
+  "homepage": "https://github.com/callum/morphdom-hooks#readme",
+  "peerDependencies": {
+    "morphdom": ">=1.2.0"
+  },
+  "devDependencies": {
+    "tape": "^4.5.1"
+  }
+}

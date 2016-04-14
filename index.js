@@ -1,10 +1,11 @@
-const assert = require('assert')
 const events = ['onadd', 'onupdate', 'ondiscard']
 
 module.exports = hooks
 
 function hooks (morphdom) {
-  assert.equal(typeof morphdom, 'function', 'morphdom must be a function')
+  if (typeof morphdom !== 'function') {
+    throw new Error('morphdom must be a function');
+  }
 
   return function main (fromNode, toNode, opts) {
     if (typeof opts === 'undefined') opts = {}

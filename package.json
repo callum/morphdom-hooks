@@ -1,6 +1,6 @@
 {
   "name": "morphdom-hooks",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Lifecycle hooks for morphdom",
   "main": "index.js",
   "scripts": {

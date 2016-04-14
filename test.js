@@ -1,5 +1,10 @@
-const test = require('tape')
-const hooks = require('./')
+var test = require('tape')
+var hooks = require('./')
+
+test('throws', function (t) {
+  t.plan(1)
+  t.throws(hooks)
+})
 
 test('wrapping morphdom', function (t) {
   t.plan(6)
@@ -26,8 +31,8 @@ test('wrapping morphdom', function (t) {
 
 test('events', function (t) {
   t.plan(3)
-  const foo = {}
-  const handleEvent = function (foo) {
+  var foo = {}
+  var handleEvent = function (foo) {
     t.ok(foo, 'should call function')
   }
   foo.onadd = handleEvent
@@ -44,14 +49,14 @@ test('events', function (t) {
 
 test('copying events', function (t) {
   t.plan(6)
-  const foo = {}
-  const bar = {}
+  var foo = {}
+  var bar = {}
   bar.onadd = noop
   bar.onupdate = noop
   bar.ondiscard = noop
-  const baz = {}
+  var baz = {}
 
-  const morphdom = hooks(lib)
+  var morphdom = hooks(lib)
   morphdom(foo, bar)
   t.equal(typeof foo.onadd, 'function')
   t.equal(typeof foo.onupdate, 'function')

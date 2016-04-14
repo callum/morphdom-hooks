@@ -9,7 +9,7 @@ function hooks (morphdom) {
     if (typeof opts === 'undefined') opts = {}
 
     return morphdom(fromNode, toNode, {
-      onBeforeElUpdated (fromEl, toEl) {
+      onBeforeElUpdated: function (fromEl, toEl) {
         events.forEach(function (event) {
           if (callable(toEl[event])) {
             fromEl[event] = toEl[event]
@@ -22,17 +22,17 @@ function hooks (morphdom) {
         }
       },
 
-      onNodeAdded (node) {
+      onNodeAdded: function (node) {
         if (callable(node.onadd)) node.onadd(node)
         if (callable(opts.onNodeAdded)) opts.onNodeAdded(node)
       },
 
-      onElUpdated (el) {
+      onElUpdated: function (el) {
         if (callable(el.onupdate)) el.onupdate(el)
         if (callable(opts.onElUpdated)) opts.onElUpdated(el)
       },
 
-      onNodeDiscarded (node) {
+      onNodeDiscarded: function (node) {
         if (callable(node.ondiscard)) node.ondiscard(node)
         if (callable(opts.onNodeDiscarded)) opts.onNodeDiscarded(node)
       }

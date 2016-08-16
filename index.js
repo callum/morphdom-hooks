@@ -35,7 +35,9 @@ function hooks (morphdom) {
       onNodeDiscarded: function (node) {
         if (callable(node.ondiscard)) node.ondiscard(node)
         if (callable(opts.onNodeDiscarded)) opts.onNodeDiscarded(node)
-      }
+      },
+      
+      childrenOnly: opts.childrenOnly
     })
   }
 }
